@@ -1,0 +1,32 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+    </head>
+<body>
+<div>
+The current date/time is <span id="dateTime"> </span>.
+</div>
+<script>
+        var timeyetu = document.getElementById("dateTime");
+        var xyz = new Date();
+        timeyetu.innerHTML = xyz;
+        </script>
+
+
+<div>
+        You have visited this page <span id="report"> </span> times.
+        </div>
+        <script>
+        var timesVisited = 0;
+        if (localStorage.timesVisited) {
+        timesVisited = parseInt(localStorage.timesVisited);
+        }
+        timesVisited += 1;
+        localStorage.setItem('timesVisited', timesVisited);
+        var report = document.getElementById('report');
+        report.innerHTML = timesVisited;
+        if (timesVisited > 10)
+        report.style.backgroundColor = 'red';
+        </script>
+</body>
+</html>

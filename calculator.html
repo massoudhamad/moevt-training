@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF­8">
+<title>Simple Calculator</title>
+<script>
+function assignNumber(num)
+{
+document.getElementById('number').value+=num;
+}
+function displayNumber()
+{
+val1=eval(document.getElementById('number').value);
+document.getElementById('number').value=val1;
+}
+function reset()
+{document.getElementById('number').value='';
+}
+</script>
+<style>
+table{
+height: auto;
+width:375px;
+background­color:black;
+border: 0px;
+}
+button{
+width: 70px;
+height: 70px;
+border: none;
+font­size: 20px;
+}
+input
+{
+width: 371px;
+height: 40px;
+font­size: 30px;
+text­align: right;
+}
+</style>
+</head>
+<body>
+<input type="text" id="number" placeholder="0">
+<table>
+<tr>
+<td><button
+onclick="assignNumber(7)">7</button></td>
+<td><button
+onclick="assignNumber(8)">8</button></td>
+<td><button
+onclick="assignNumber(9)">9</button></td>
+<td><button
+onclick="assignNumber('/')">/</button></td>
+<td><button onclick="reset()">CLR</button></td>
+</tr>
+<tr>
+<td><button
+onclick="assignNumber(4)">4</button></td>
+<td><button
+onclick="assignNumber(5)">5</button></td>
+<td><button
+onclick="assignNumber(6)">6</button></td>
+<td><button
+    onclick="assignNumber('*')">*</button></td>
+    </tr>
+    <tr>
+    <td><button
+    onclick="assignNumber(1)">1</button></td>
+    <td><button
+    onclick="assignNumber(2)">2</button></td>
+    <td><button
+    onclick="assignNumber(3)">3</button></td>
+    <td><button onclick="assignNumber('­')">­
+    </button></td>
+    </tr>
+    <tr>
+    <td><button
+    onclick="assignNumber(0)">0</button></td>
+    <td><button
+    onclick="assignNumber('.')">.</button></td>
+    <td><button
+    onclick="assignNumber('+')">+</button></td>
+    <td colspan="2"><button
+    onclick="displayNumber()">=</button></td>
+    </tr>
+    </table>
+    </body>
+    </html>

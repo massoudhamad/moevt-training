@@ -1,0 +1,34 @@
+<html>
+<head>
+        <meta charset="UTF­8">
+
+ <title> Check if Nuumber... </title>
+<script type=text/javascript>
+function allnumeric()
+{
+	var uzip = document.f.zc;
+	var numbers = /^[\d]{6}$/;
+	if(uzip.value.match(numbers))
+	{ 
+		return true;
+	}
+	else
+	{
+		alert('ZIP code must have numeric characters only');
+		uzip.focus();
+		return false;
+	}
+}
+
+</script>
+</head>
+
+<body>
+<form name="f">
+	<label for="zc"> Zip Code </label>
+	<input type="text" name="zc">
+	<input type="button" value="Check" onClick="allnumeric()">
+</form>
+</body>
+
+</html>
