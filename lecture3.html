@@ -1,0 +1,25 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <script type="text/javascript" src="js/jquery-3.4.1.min.js">
+            </script>
+    </head>
+<body>
+        <button id="clickMe">Click Me!</button>
+        <p>
+        You've clicked the button <span id="numClicks">0 times</span>.
+        <script>
+                var clicks = 0;
+                function Jambiani() {
+                clicks++;
+                var numClicksSpan = $('#numClicks');
+                if (clicks == 1)
+                numClicksSpan.html('once');
+                else
+                numClicksSpan.html(clicks + ' times');
+                }
+                $('#clickMe').click(Jambiani);
+                </script>       
+        </script>
+</body>
+</html>
