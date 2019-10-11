@@ -3,10 +3,10 @@
             <meta charset="UTF-8">
     </head>
 <body>
-<div>
+<!--<div>
 The current date/time is <span id="dateTime"> </span>.
 </div>
-<script>
+ <script>
         var timeyetu = document.getElementById("dateTime");
         var xyz = new Date();
         timeyetu.innerHTML = xyz;
@@ -28,5 +28,47 @@ The current date/time is <span id="dateTime"> </span>.
         if (timesVisited > 10)
         report.style.backgroundColor = 'red';
         </script>
+
+
+You have accessed this page <span id="report"></span> times.
+<p>
+Your last visit was <span id="lastVisitDate"></span>.
+<script>
+var timesVisited = 0;
+var lastVisitDate = 'never';
+if (localStorage.lastVisit) {
+var lastVisit = JSON.parse(localStorage.lastVisit);
+timesVisited = lastVisit.numVisits;
+lastVisitDate = lastVisit.date;
+}
+document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+timesVisited++;
+document.getElementById('report').innerHTML = timesVisited;
+var myLastVisit = { }
+myLastVisit.date = new Date();
+myLastVisit.numVisits = timesVisited;
+localStorage.lastVisit = JSON.stringify(myLastVisit);
+</script> -->
+
+<button id="clickMe">Click Me!</button>
+<p>
+You've clicked the button <span id="numClicks">0 times</span>.
+<script>
+var button = document.getElementById('clickMe');
+
+var clicks = 0;
+function Jambiani() 
+{
+    clicks++;
+    var numClicksSpan = document.getElementById('numClicks');
+    if (clicks == 1)
+        numClicksSpan.innerHTML = 'once';   
+    else
+        numClicksSpan.innerHTML = clicks + ' times';
+}
+
+button.addEventListener('click',Jambiani)
+
+</script>
 </body>
 </html>
